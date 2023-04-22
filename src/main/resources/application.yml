@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/autoyard_db?createDatabaseIfNotExist=true
+    username: sa
+    password: ''
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+  profiles:
+    active: development
+  logging:
+    level:
+      org.springframework: info
+      org.hibernate: info
+
+  # for catch NoHandlerFoundException
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false

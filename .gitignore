@@ -1,0 +1,7 @@
+.idea
+.git
+/out
+/target
+*.log
+*.class
+*.iml
