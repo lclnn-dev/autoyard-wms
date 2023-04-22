@@ -1,4 +1,4 @@
-package com.autoyardproject.com;
+package com.autoyard.project;
 
 
 import org.springframework.boot.SpringApplication;
