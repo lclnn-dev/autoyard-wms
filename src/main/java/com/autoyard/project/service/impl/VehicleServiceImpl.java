@@ -1,5 +1,6 @@
 package com.autoyard.project.service.impl;
 
+import com.autoyard.project.api.exception.CustomEntityNotFoundException;
 import com.autoyard.project.domain.entity.Vehicle;
 import com.autoyard.project.repository.VehicleRepository;
 import com.autoyard.project.service.VehicleService;
