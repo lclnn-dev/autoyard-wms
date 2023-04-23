@@ -22,3 +22,9 @@ spring:
   web:
     resources:
       add-mappings: false
+
+  sql:
+    init:
+      schema-locations: classpath:schema.sql
+      #data-locations: classpath:data.sql
+      mode: always
