@@ -62,7 +62,8 @@ public class ReceivingActController {
     @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ReceivingActResponse updateReceivingAct(@PathVariable("id") UUID id, @RequestBody ReceivingActRequest docRequest) {
-        ReceivingAct docEntity = receivingActMapper.toReceivingActEntity(docRequest, id);
+        ReceivingAct docEntity = receivingActMapper.toReceivingActEntity(docRequest);
+        docEntity.setId(id);
         ReceivingAct updatedDocEntity = receivingActService.update(docEntity);
 
         return receivingActMapper.toReceivingActResponse(updatedDocEntity);

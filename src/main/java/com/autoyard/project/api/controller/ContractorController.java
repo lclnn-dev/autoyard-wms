@@ -57,7 +57,8 @@ public class ContractorController {
     @ResponseStatus(HttpStatus.OK)
     public ContractorResponse updateContractor(@PathVariable("id") UUID id, @RequestBody ContractorRequest contractorRequest) {
         ContractorValidator.validateRequest(contractorRequest);
-        Contractor contractorEntity = contractorMapper.toContractorEntity(contractorRequest, id);
+        Contractor contractorEntity = contractorMapper.toContractorEntity(contractorRequest);
+        contractorEntity.setId(id);
         Contractor updatedContractorEntity = contractorService.update(contractorEntity);
 
         return contractorMapper.toContractorResponse(updatedContractorEntity);

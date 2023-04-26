@@ -6,15 +6,12 @@ import com.autoyard.project.domain.entity.Contractor;
 import org.mapstruct.Mapper;
 
 import java.util.List;
-import java.util.UUID;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface ContractorMapper {
     ContractorResponse toContractorResponse(Contractor contractor);
 
     List<ContractorResponse> toContractorResponseList(List<Contractor> contractors);
 
     Contractor toContractorEntity(ContractorRequest request);
-
-    Contractor toContractorEntity(ContractorRequest request, UUID id);
 }

@@ -57,7 +57,8 @@ public class CellOfYardController {
     @ResponseStatus(HttpStatus.OK)
     public CellOfYardResponse updateVinCode(@PathVariable("id") UUID id, @RequestBody CellOfYardRequest cellRequest) {
         CellOfYardValidator.validateRequest(cellRequest);
-        CellOfYard cellEntity = cellOfYardMapper.toCellEntity(cellRequest, id);
+        CellOfYard cellEntity = cellOfYardMapper.toCellEntity(cellRequest);
+        cellEntity.setId(id);
         CellOfYard updatedCellEntity = cellOfYardService.update(cellEntity);
 
         return cellOfYardMapper.toCellResponse(updatedCellEntity);
